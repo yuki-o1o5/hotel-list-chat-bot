@@ -21,14 +21,14 @@ rl.question(
         cityCode: modifyAnswer,
       })
       .then(function (response) {
+        let numberOfHotel = response.data;
+        console.log("===================================================");
+        console.log(`Total number of hotels is : ${numberOfHotel.length}`);
         response.data.forEach((element) => {
           console.log("===================================================");
           console.log(element.name);
           console.log(element.geoCode);
         });
-        let numberOfHotel = response.data;
-        console.log("===================================================");
-        console.log(`Total number of hotels is : ${numberOfHotel.length}`);
       })
       .catch(function (response) {
         console.error(response);
